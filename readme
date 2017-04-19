@@ -1,4 +1,7 @@
 # 这是spring mvc +mybatis的手脚架,目的于开箱即用
+项目地址: https://github.com/javastar920905/springmybatis,有兴趣的可以点击右上角的 的fork和star
+
+
 # 使用要求:
 java 8及以上
 gradle
@@ -17,7 +20,7 @@ gradle 刷新依赖,并且打包成war包 gradle clean assemble
 
 # 项目说明:
 * 集成了spring boot + mybatis
-配置数据源 resources/mybatis.properties
+配置数据源 resources/mybatis.properties (你需要一个m可用的myysql数据库 数据库的话这里提供一个docker版本的mysql 2017-06-20到期不再提供)
 * 持久层添加 mybatis Generator 插件,用于生成常用的增删改查(实体类&&Mapper接口&&Mapper.xml)
 Generator 配置文件位于 resources/generatorConfig.xml (修改生成文件的位置,以及数据表, 需要下载mysql驱动)
 配置好配置文件以后 运行 com.ouzhx.repository.MybatisGeneratorRun.java 的main方法即可
@@ -29,7 +32,9 @@ Generator 配置文件位于 resources/generatorConfig.xml (修改生成文件�
 静态页面 位于 resources/static,可以在WebMvcConfig.java中配置
 ftl 页面位于 resources/templates
 
-* 计划集成但是还没有集成的功能 (Apache shiro /swagger ui /spring websocket+ 消息发布与订阅 (MQ/Redis) /junit+dbutil做单元测试 ...)
+* 计划集成但是还没有集成的功能
+web (Apache shiro /swagger ui /spring websocket+ 消息发布与订阅 (MQ/Redis)  ...)
+repository (junit+dbutil做单元测试 /redis /elasticsearch+ ik分词器 ...)
 
 * 同时请关注 https://github.com/javastar920905/ssm-repository.git 会支持当前项目的分布式开发,使用motan做rpc框架
 * 其他小项目 https://github.com/javastar920905/spider-webmagic.git (这是一个用webmagic做的爬虫示例程序!)
