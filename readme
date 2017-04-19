@@ -1,0 +1,38 @@
+# 这是spring mvc +mybatis的手脚架,目的于开箱即用
+# 使用要求:
+java 8及以上
+gradle
+idea
+git
+tomcat 8
+这里有本人开发环境搭建的总结
+http://note.youdao.com/noteshare?id=3a89ea0236870588129e890a15e19fee&sub=A12129E8C3E14938969D4FF9963659E5
+
+# 使用步骤:
+克隆仓库到本地 git clone https://github.com/javastar920905/springmybatis.git
+导入项目到 idea
+gradle 刷新依赖,并且打包成war包 gradle clean assemble
+发布到Tomcat(或者直接运行AppConfig.java中的 main方法)
+访问 localhost:8080/index/
+
+# 项目说明:
+* 集成了spring boot + mybatis
+配置数据源 resources/mybatis.properties
+* 持久层添加 mybatis Generator 插件,用于生成常用的增删改查(实体类&&Mapper接口&&Mapper.xml)
+Generator 配置文件位于 resources/generatorConfig.xml (修改生成文件的位置,以及数据表, 需要下载mysql驱动)
+配置好配置文件以后 运行 com.ouzhx.repository.MybatisGeneratorRun.java 的main方法即可
+* 持久层集成了flyway,用于数据库版本同步
+首先在 resources/db.migration 按照对应的文件格式写新的sql V1__Init_db.sql(注意V1__这里必须有两条下划线)
+运行 com.ouzhx.repository.FlyWaryRun.java 下的main方法即可往数据库自动生成表和数据
+
+* spring boot 集成 spring mvc + freemark
+静态页面 位于 resources/static,可以在WebMvcConfig.java中配置
+ftl 页面位于 resources/templates
+
+* 计划集成但是还没有集成的功能 (Apache shiro /swagger ui /spring websocket+ 消息发布与订阅 (MQ/Redis) /junit+dbutil做单元测试 ...)
+
+* 同时请关注 https://github.com/javastar920905/ssm-repository.git 会支持当前项目的分布式开发,使用motan做rpc框架
+* 其他小项目 https://github.com/javastar920905/spider-webmagic.git (这是一个用webmagic做的爬虫示例程序!)
+
+
+
