@@ -44,7 +44,8 @@ ftl 页面位于 resources/templates
 web (Apache shiro /swagger ui /spring websocket+ 消息发布与订阅 (MQ/Redis)  ...)
 repository (junit+dbutil做单元测试 /redis /elasticsearch+ ik分词器 ...)
 
-* 同时请关注 https://github.com/javastar920905/ssm-repository.git 会支持当前项目的分布式开发,使用motan做rpc框架,有多个分支
+# 相关项目进度
+* 同时请关注下面项目进度,支持当前项目的分布式开发,使用motan做rpc框架,有多个分支
 motan 注解配置实现方式 https://github.com/javastar920905/ssm-repository/tree/motan_annotation_config 
 motan xml配置方式实现 https://github.com/javastar920905/ssm-repository/tree/motan_xml_config
 master主分支,为稳定版本 https://github.com/javastar920905/ssm-repository 
