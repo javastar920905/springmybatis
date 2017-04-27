@@ -19,10 +19,10 @@ tomcat 8
 http://note.youdao.com/noteshare?id=3a89ea0236870588129e890a15e19fee&sub=A12129E8C3E14938969D4FF9963659E5
 
 # 使用步骤:
-克隆仓库到本地 git clone https://github.com/javastar920905/springmybatis.git
-导入项目到 idea
-gradle 刷新依赖,并且打包成war包 gradle clean assemble
-发布到Tomcat(或者直接运行AppConfig.java中的 main方法)
+1 克隆仓库到本地 git clone https://github.com/javastar920905/springmybatis.git
+2 导入项目到 idea
+3 gradle 刷新依赖,并且打包成war包 gradle clean assemble
+4 发布到Tomcat(或者直接运行AppConfig.java中的 main方法)
 访问 localhost:8080/index/
 
 # 项目说明:
