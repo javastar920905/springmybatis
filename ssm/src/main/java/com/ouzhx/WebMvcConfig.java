@@ -29,6 +29,8 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     registry.addResourceHandler("/api-doc/**").addResourceLocations("classpath:static/api-doc/");
     registry.addResourceHandler("/api-docs/**").addResourceLocations("classpath:static/api-doc/");
     registry.addResourceHandler("/favicon.ico").addResourceLocations("classpath:static/favicon.ico");
+    //重定向对webjars 资源的访问
+    registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
     super.addResourceHandlers(registry);
   }
 }
