@@ -1,17 +1,14 @@
 package com.ouzhx.repository;
 
+import java.util.List;
+import java.util.UUID;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.ouzhx.entity.User;
 import com.ouzhx.repository.mapper.UserMapper;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import com.ouzhx.AppConfig;
-import com.ouzhx.entity.City;
-import com.ouzhx.repository.mapper.CityMapper;
-
-import java.util.List;
-import java.util.UUID;
 
 /**
  * Created by Administrator on 2017/4/15.

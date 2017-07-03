@@ -1,8 +1,7 @@
 package com.ouzhx.controller;
 
-import com.sun.org.apache.regexp.internal.RE;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("test")
 public class TestController {
 
-  @RequestMapping(value = "/",method = RequestMethod.GET)
+  @GetMapping(value = "/")
   public String test() {
     return "test ";
   }
