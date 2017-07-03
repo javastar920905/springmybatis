@@ -1,13 +1,17 @@
 package com.ouzhx.repository;
 
-import com.ouzhx.common.MybatisUtils;
-import org.apache.tomcat.jdbc.pool.DataSourceFactory;
+import java.util.Properties;
+
+import javax.sql.DataSource;
+
+import com.alibaba.druid.pool.DruidDataSource;
 import org.flywaydb.core.Flyway;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
-import javax.sql.DataSource;
-import java.util.Properties;
+import com.ouzhx.AppConfig;
+import com.ouzhx.common.MybatisUtils;
 
 /**
  * Created by ouzhx on 2017/4/17.
@@ -24,8 +28,12 @@ public class FlyWaryRun {
     Properties properties = new Properties();
     properties.load(resource.getInputStream());
     Flyway flyway = new Flyway();
-    DataSourceFactory factory = new DataSourceFactory();
-    DataSource dataSource = factory.createDataSource(properties);
+
+    DruidDataSource dataSource = new DruidDataSource();
+    dataSource.setUsername(properties.getProperty("mysql.username"));
+    dataSource.setUrl(properties.getProperty("mysql.url"));
+    dataSource.setDriverClassName(properties.getProperty("mysql.driver"));
+    dataSource.setPassword(properties.getProperty("mysql.password"));
 
     flyway.setDataSource(dataSource);
 
